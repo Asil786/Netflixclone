@@ -75,6 +75,12 @@ h3{
     transition-delay: 0.1s;
     filter: brightness(70%);
 }
+
+.tr img:hover video{
+    transition-delay: 0.4s;
+    filter: brightness(80%);
+    transition: ease-in-out;
+}
 html{
     overflow-x: hidden;
     overflow: scroll;

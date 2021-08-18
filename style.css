@@ -59,6 +59,17 @@ body{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0.2);
     z-index: 1;
 }
+ul.active{
+    transform: perspective(1000px);
+}
+.dropdown-menu ul{
+    text-align: center;
+    align-items: center; 
+    color: #fff;
+    padding: 04px 04px;
+    text-decoration: none;
+    display: block;
+} 
 .dropdown-menu a{
     text-align: center;
     align-items: center; 
