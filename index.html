@@ -9,29 +9,32 @@
     <title>Netflix India – Watch TV Shows Online, Watch Movies Online</title>
     <script src="https://kit.fontawesome.com/692c225c9e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </script>
+   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('button').click(function(){
+              $('ul').toggleClass('active')
+          })
+      })
+    </script>
 </head>
 <body>
     <section class="container">
         <div class="head">
             <img src="assets/Netflix_Logo.png" alt="">
-            <div class="English-button">
-                <button class="menu">
-                    <i class="fas fa-globe"></i>&nbsp;English&nbsp;
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-menu">
+            <div class="dropdown">
+                <button><i class="fas fa-globe"></i>&nbsp;English&nbsp;
+                    <i class="fa fa-caret-down"></i></button>
                 <ul>
-                    <a href="index.html">English</a>
-                    <a href="hindi.html">हिंदी</a>
+                    <li><a href="index.html">English</a></li>
+                    <li><a href="hindi.html">हिंदी</a></li>
                 </ul>
-                </div>
             </div>
-            <script>
-                function myfun()
-            </script>
-                <div class="sign-in"><a href="https://www.netflix.com/in/login">Sign In</a></div>
+            <div class="sign-in"><a href="https://www.netflix.com/in/login">Sign In</a>
             </div>
             </div>
+        </div>
     </section>
     <section class="banner">
         <img src="assets/banner.jpg" alt="banner" class="fit">
@@ -75,9 +78,7 @@
                         <h4>Stranger Things</h4>
                         <h5>Downloading...</h5>
                         <img src="assets/download-icon.gif">
-                </div>
-                
-                   
+                </div>     
             </div> 
       </div>
 
