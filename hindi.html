@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/nficon2016.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Netflix भारत - टीवी शो और फ़िल्में ऑनलाइन देखें</title>
+    <script src="https://kit.fontawesome.com/692c225c9e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </script>
+   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('button').click(function(){
+              $('ul').toggleClass('active')
+          })
+      })
+    </script>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    /* background-color: black; */
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: black; */
+}
+html{
+    overflow-x: hidden;
+}
+.container .head {
+    text-decoration: none;
+    position: absolute;
+    top: 10;
+    left: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 10px 50px;
+    z-index: 1000000000;
+}
+
+.container .head img{
+    width: 18%;
+}
+.container .head .sign-in a{
+    text-decoration: none;
+    left: 85px;
+    color: aliceblue;
+    text-decoration: none;
+    background-color: #E50914;
+    padding: 8px 15px;
+    border-radius: 3px;
+}
+.dropdown{
+    position: absolute;
+    top: 35%;
+    left: 77%;
+    border-radius: 3px;
+}
+button{
+    position: relative;
+    height: 35px;
+    background-color: transparent;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    min-width: 100px;
+    color: #fff;
+    padding: 5px 7px;
+    box-shadow: none;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 3px;
+    border: 1.647px solid #fff;
+}
+ul{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 14px;
+    position: absolute;
+    background-color: grey;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0.2);
+    background: #ccc;
+    transform-origin: top;
+    transform: perspective(0px) rotateX(-90deg);
+    z-index: 1;
+}
+ul.active{
+    transform: perspective(0px) rotateX(0deg);
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    display: block;
+    padding: 6px 2px;
+    text-align: center;
+    text-decoration: none;
+    background-color: grey;
+    color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+ul li a:hover{
+    background: #0d7ad0;
+}
+.banner{ 
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to bottom,#000,transparent);
+}
+.banner:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to top,#000,transparent);
+}
+.banner .fit{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.banner .box{
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+.banner .box .heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.banner .box .heading h2{
+    font-size: 3.2em;
+    color: #fff;
+    width: 100%;
+}
+.banner .box .heading h5{
+    font-size: 1.6em;
+    color: #fff;
+    font-weight: 400;
+    padding: 0.7rem;
+}
+.banner .box .heading p{
+    font-size: 1.2em;
+    color: #fff;
+    width: 140%;
+    font-weight: 300;
+    padding: 15px 0;
+    /* padding-bottom: 20px; */
+}
+.banner .box .Email{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.banner .box .Email input{
+    font-size: 16px;
+    color: #000;
+    height: 48px;
+    min-width: 400px;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid grey;
+    align-items: center;
+    padding: 10px 10px 0 0 ;
+}
+.banner .box .Email input::placeholder{
+    position: absolute;
+    top: 22px;
+    left: 10px;
+}
+.banner .box .Email a{
+    width: 170px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    background: #E50914;
+    line-height: 60px;
+    min-width: 200px;
+    font-size: 1.625rem;
+    padding: 0 30px;
+    letter-spacing: 0.1px;
+    text-align: center;
+}
+.card-1,
+.card-2,
+.card-3,
+.card-4{
+    border-top: 0.6rem solid rgb(37, 36, 36);
+    padding: 50px;
+    color: #fff;
+}
+.card-1{
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 50% 40%;
+    text-align: left;
+    align-items: center;
+    padding: 35px 28px 50px;
+}
+.card-1 img{
+    margin-left: 7%;
+    height: 21rem;
+}
+.desc-1{
+    padding-left: 25px;
+}
+.style-cards h1{
+    font-size: 3.1rem;
+    padding: 1rem;
+    padding-left: 0;
+}
+.style-cards p{
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+.card-1 video{
+    margin-left: 2%;
+    position: relative;
+    height: 58%;
+    width: 100%;
+    grid-column: 2/2;
+    grid-row: 1/2;
+    z-index: -1;
+}
+.card-1 img{
+    grid-column: 2/2;
+    grid-row: 1/2;
+}
+.card-2{
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 47% 55%;
+    text-align: left;
+    align-items: center;
+    padding: 45px 0px 55px 0px;
+}
+.card-2 img{
+    height: 19rem;
+}
+.desc-2{
+    padding-left: -5px;
+}
+.style-cards h1{
+    font-size: 3.1rem;
+    padding: 1rem;
+    padding-left: 0;
+}
+.style-cards p{
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+.card-animation-box{
+    background-color: #000;
+    border-radius: 12px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 14vh;
+    width: 40vh;
+    margin-top: -130px;
+    margin-left: 70px;
+    border: 2px solid rgba(255,255,255,.25);
+}
+.card-animation-box .animation-image{
+    left: 10px;
+}
+.card-animation-box .animation-image img{
+    margin-top: 10px;
+    margin-left: 13px;
+    height: 4.5rem;
+}
+.card-animation-box .animation-text{
+    margin-top: -60px;
+    margin-left: 80px;
+}
+.card-animation-box .animation-text h4{
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.card-animation-box .animation-text h5{
+    font-size: 15px;
+    color: #0071eb;
+    font-weight: 400;
+}
+.card-animation-box .animation-text img{
+    justify-content: center;
+    margin-top: -50px;
+    margin-left: 125px;
+    height: 3rem;
+}
+.card-3{
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 53% 40%;
+    text-align: left;
+    align-items: center;
+    padding: 40px 28px 50px;
+}
+.card-3 img{
+    margin-left: 1%;
+    height: 22rem;
+}
+.desc-3{
+    padding-left: 25px;
+}
+.style-cards h1{
+    font-size: 3.1rem;
+    padding: 1rem;
+    padding-left: 0;
+}
+.style-cards p{
+    padding-right: 30px;
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+.card-3 video{
+    margin-top: 22px;
+    margin-left: -3%;
+    position: relative;
+    height: 35%;
+    width: 100%;
+    grid-column: 2/2;
+    grid-row: 1/2;
+    z-index: -1;
+}
+.card-3 img{
+    grid-column: 2/2;
+    grid-row: 1/2;
+}
+.card-4{
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 47% 50%;
+    text-align: left;
+    align-items: center;
+    padding: 50px 0px 50px 0px;
+}
+.card-4 img{
+    left: 120px;
+    height: 20rem;
+}
+.desc-4{
+    padding-left: 25px;
+}
+.style-cards h1{
+    font-size: 3.1rem;
+    padding: 1rem;
+    padding-left: 0;
+}
+.style-cards p{
+    /* margin-right: 4px; */
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+</style>
+<body>
+    <section class="container">
+        <div class="head">
+            <img src="assets/Netflix_Logo.png" alt="">
+            <div class="dropdown">
+                <button><i class="fas fa-globe"></i>&nbsp;हिंदी&nbsp;
+                    <i class="fa fa-caret-down"></i></button>
+                <ul>
+                    <li><a href="index.html">English</a></li>
+                    <li><a href="hindi.html">हिंदी</a></li>
+                </ul>
+            </div>         
+                <div class="sign-in"><a href="https://www.netflix.com/in/login">साइन इन करें</a></div>
+            </div>
+            </div>
+    </section>
+    <section class="banner">
+        <img src="assets/banner.jpg" alt="banner" class="fit">
+        <div class="box">
+            <div class="heading">
+                <h2>अनलिमिटेड फ़िल्में, टीवी शो और बहुत कुछ.</h2>
+                <h5>जहां चाहें देखें. जब चाहें कैंसल करें.</h5>
+                <p>देखने के लिए तैयार हैं? अपनी मेंबरशिप बनाने या रीस्टार्ट करने के लिए अपना ईमेल एड्रेस डालें.</p>
+            </div>
+            <div class="Email">
+                 <input type="text" placeholder="ईमेल एड्रेस">
+                 <a href="#">शूरू करे ></a>
+            </div>
+        </div>
+    </section>
+    
+</section>
+<section class="style-cards">
+    <div class="card-1">
+        <div class="desc-1">
+            <h1>अपनी टीवी पर मज़ा लें.</h1>
+            <p>स्मार्ट टीवी, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray प्लेयर के साथ ही दूसरे डिवाइस पर भी देखें.</p>
+        </div>
+        <img src="assets/part1image.png">
+    
+    <video class="video-1" autoplay="" playsinline="" muted="" loop="">
+          <source src="assets/part1video.m4v" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="card-2">
+      <img src="assets/part2image.jpg">
+      <div class="desc-2">
+          <h1>ऑफ़लाइन देखने के लिए अपने शो डाउनलोड करें.</h1>
+          <p>अपने पसंदीदा शो और फ़िल्में सेव करें, ताकि आप कभी भी इन्हें देख सकें.</p>
+      </div>  
+      <div class="card-animation-box">
+          <div class="animation-image">
+              <img src="assets/stranger.png">
+          </div>
+          <div class="animation-text">
+                  <h4>Stranger Things</h4>
+                  <h5>डाउनलोड हो रहा है...</h5>
+                  <img src="assets/download-icon.gif">
+          </div>
+          
+             
+      </div> 
+</div>
+
+<div class="card-3">
+  <img src="assets/part3image.png">
+  <div class="desc-3">
+      <h1>हर जगह देखें.</h1>
+      <p>बिना ज़्यादा पेमेंट किए, अपने फ़ोन, टैबलेट, लैपटॉप और टीवी पर अनलिमिटेड फ़िल्में और टीवी शो स्ट्रीम करें.</p>
+  </div>
+  <video class="video-1" autoplay="" playsinline="" muted="" loop="">
+      <source src="assets/part3video.m4v" type="video/mp4">
+</video>  
+</div>
+
+<div class="card-4">
+<img src="assets/part4image.png">
+<div class="desc-4">
+  <h1>बच्चों के लिए प्रोफ़ाइल बनाएं.</h1>
+  <p>बच्चों को जाने दें अपने पसंदीदा किरदारों के साथ उस रोमांचक सफ़र पर जो सिर्फ़ उनके लिए ही है - आपकी मेंबरशिप के साथ फ़्री.</p>
+</div>   
+</div>
+
+</section>
+
+</body>
+</html>
